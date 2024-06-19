@@ -9,14 +9,23 @@ even possible. If not, I'll have to wrap it with flexbox maybe?
 
 // Initialize variables
 const container = document.querySelector("#grid-container");
-let gridSize = 16;
+let gridSize = 5;
 
-// Create div, set id to grid-pixel, add textContent to Test
-const gridPixel = document.createElement("div");
-gridPixel.setAttribute("id", "grid-pixel");
-gridPixel.textContent = "Test";
-// Add to container
-container.appendChild(gridPixel);
+// Create function to create the grid. Rows and cells will need to be created using the gridSize from the user
+function createGrid(gridSize) {
+  // Create Rows
+  for (let i = 0; i < gridSize; i++) {
+    const row = document.createElement("div");
+    row.classList.add("grid-row");
 
-// Create function to create the grid
-function createGrid(gridSize) {}
+    for (let i = 0; i < gridSize; i++) {
+      const cell = document.createElement("div");
+      cell.classList.add("grid-cell");
+      row.appendChild(cell);
+      cell.textContent = "Cell!";
+    }
+    container.appendChild(row);
+  }
+}
+
+createGrid(gridSize);
