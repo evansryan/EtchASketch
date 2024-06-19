@@ -26,17 +26,30 @@ setGridSize.addEventListener("click", () => {
   resetGrid();
 });
 
+// Event listener to change colors on grid
+
+// Set Reset Button Event Listener
+const resetBtn = document.querySelector("#reset-button");
+resetBtn.addEventListener("click", () => {
+  location.reload();
+});
+
 // Function called when Set Grid Size is clicked. This will clear the container and rebuild based on user input
 function resetGrid() {
   let gridSize = prompt("What grid size would you like? 5-75, please.");
+  createGrid(gridSize);
+}
+
+function removeChildNodes() {
   while (container.firstChild) {
     container.removeChild(container.firstChild);
   }
-  createGrid(gridSize);
 }
 
 // Create function to create the grid. Rows and cells will need to be created using the gridSize from the user
 function createGrid(gridSize) {
+  // Removes Child Nodes before starting the grid creation
+  removeChildNodes();
   // Create Rows
   for (let i = 0; i < gridSize; i++) {
     const row = document.createElement("div");
@@ -47,6 +60,9 @@ function createGrid(gridSize) {
       const cell = document.createElement("div");
       cell.classList.add("grid-cell");
       row.appendChild(cell);
+      cell.addEventListener("mouseover", () => {
+        cell.classList.add("hover-bg");
+      });
       // cell.textContent = "Cell!";
     }
     container.appendChild(row);

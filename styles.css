@@ -3,8 +3,11 @@
 }
 
 .grid-cell {
-  border: 1px solid black;
   width: 20px;
   height: 20px;
-  background-color: orange;
+  background-color: lightgray;
+}
+
+.hover-bg {
+  background-color: burlywood;
 }
