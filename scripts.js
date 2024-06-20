@@ -2,6 +2,8 @@
 const container = document.querySelector("#grid-container");
 const setGridSize = document.querySelector("#set-grid-size");
 const resetBtn = document.querySelector("#reset-button");
+const colorPicker = document.querySelector("#color-picker");
+let currentColor = "#000000";
 let gridSize = 10;
 
 createGrid(gridSize);
@@ -9,6 +11,11 @@ createGrid(gridSize);
 // Set Grid Size Button Event Listener
 setGridSize.addEventListener("click", () => {
   resetGrid();
+});
+
+// Event Listeners for color changing
+colorPicker.addEventListener("input", (event) => {
+  currentColor = event.target.value;
 });
 
 // Set Reset Button Event Listener
@@ -51,7 +58,7 @@ function createGrid(gridSize) {
 
       // Add hover effect
       cell.addEventListener("mouseover", () => {
-        cell.classList.add("hover-bg");
+        cell.style.backgroundColor = currentColor;
       });
     }
     container.appendChild(row);

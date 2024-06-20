@@ -8,11 +8,11 @@
 .grid-cell {
   /* width: 20px;
   height: 20px; */
-  background-color: lightgray;
+  background-color: white;
   border: 1px black solid;
   box-sizing: border-box;
 }
 
-.hover-bg {
+/* .hover-bg {
   background-color: black;
-}
+} */
