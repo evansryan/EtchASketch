@@ -25,13 +25,22 @@ resetBtn.addEventListener("click", () => {
 
 // Function called when Set Grid Size is clicked. This will clear the container and rebuild based on user input
 function resetGrid() {
-  let gridSize = prompt("What grid size would you like? 5-75, please.");
-  if (gridSize < 5 || gridSize > 75) {
-    resetGrid();
-  } else {
-    createGrid(gridSize);
+  let gridSizeInput = prompt("What grid size would you like? (5-75)");
+
+  // If user clicks Cancel or inputs null, exit without doing anything
+  if (gridSizeInput === null) {
+    return;
   }
-  // createGrid(gridSize);
+
+  let gridSize = parseInt(gridSizeInput);
+
+  // Check if gridSize is not a number or is outside the range 5-75
+  if (isNaN(gridSize) || gridSize < 5 || gridSize > 75) {
+    alert("Please enter a valid integer between 5 and 75.");
+    resetGrid(); // Prompt again recursively
+  } else {
+    createGrid(gridSize); // Create grid with valid gridSize
+  }
 }
 
 // Function to remove all child nodes, resetting the grid to default size
