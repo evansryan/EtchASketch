@@ -23,6 +23,8 @@ body {
   width: 350px;
   border-radius: 5px;
   border: 0;
+  background-color: lightgreen;
+  color: #355e32;
 }
 
 #color-picker {
@@ -30,6 +32,7 @@ body {
   width: 200px;
   border-radius: 5px;
   border: 0;
+  background-color: lightgreen;
 }
 
 #party-mode {
@@ -37,6 +40,8 @@ body {
   width: 125px;
   border-radius: 5px;
   border: 0;
+  background-color: lightgreen;
+  color: #355e32;
 }
 
 #grid-container {
