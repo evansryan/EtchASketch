@@ -3,7 +3,7 @@ const container = document.querySelector("#grid-container");
 const setGridSize = document.querySelector("#set-grid-size");
 const resetBtn = document.querySelector("#reset-button");
 const colorPicker = document.querySelector("#color-picker");
-let currentColor = "#000000";
+let currentColor = "#FFC0CB";
 let gridSize = 16;
 
 createGrid(gridSize);

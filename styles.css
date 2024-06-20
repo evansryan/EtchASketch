@@ -1,8 +1,65 @@
+body {
+  background-color: #355e32;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  color: lightgreen;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  gap: 35px;
+}
+
+.set-grid-size {
+  height: 35px;
+  width: 350px;
+  border-radius: 5px;
+  border: 0;
+}
+
+#color-picker {
+  height: 35px;
+  width: 200px;
+  border-radius: 5px;
+  border: 0;
+}
+
+#party-mode {
+  height: 35px;
+  width: 125px;
+  border-radius: 5px;
+  border: 0;
+}
+
 #grid-container {
   display: flex;
+  margin: auto;
   width: 720px;
   height: 720px;
   border: 1em black solid;
+}
+
+.resetBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.reset-button {
+  width: 752px;
+  height: 35px;
+  font-size: 25px;
+  border-radius: 5px;
+  border: 0;
+  background-color: red;
 }
 
 .grid-cell {

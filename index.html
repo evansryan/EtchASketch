@@ -11,15 +11,26 @@
     <div class="header">
       <h1 class="title">Etch-A-Sketch</h1>
     </div>
-    <div><button class="reset-button" id="reset-button">Reset</button></div>
-    <div>
-      <button class="set-grid-size" id="set-grid-size">Set Grid Size</button>
-    </div>
-    <div>
-      <label for="color-picker">Color</label>
-      <input type="color" id="color-picker" name="color-picker" />
+    <div class="buttonContainer">
+      <div class="gridSizer" id="gridSizer">
+        <button class="set-grid-size" id="set-grid-size">Set Grid Size</button>
+      </div>
+      <div class="colorSelector" id="colorSelector">
+        <input
+          type="color"
+          value="#FFC0CB"
+          id="color-picker"
+          name="color-picker"
+        />
+      </div>
+      <div>
+        <button class="party-mode" id="party-mode">Party Mode</button>
+      </div>
     </div>
     <div class="grid-container" id="grid-container"></div>
+    <div class="resetBtn" id="resetBtn">
+      <button class="reset-button" id="reset-button">Reset</button>
+    </div>
     <script src="scripts.js" defer></script>
   </body>
 </html>
