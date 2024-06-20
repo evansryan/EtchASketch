@@ -4,7 +4,7 @@ const setGridSize = document.querySelector("#set-grid-size");
 const resetBtn = document.querySelector("#reset-button");
 const colorPicker = document.querySelector("#color-picker");
 let currentColor = "#000000";
-let gridSize = 10;
+let gridSize = 16;
 
 createGrid(gridSize);
 
@@ -13,7 +13,7 @@ setGridSize.addEventListener("click", () => {
   resetGrid();
 });
 
-// Event Listeners for color changing
+// Event Listener for color changing
 colorPicker.addEventListener("input", (event) => {
   currentColor = event.target.value;
 });
@@ -26,7 +26,12 @@ resetBtn.addEventListener("click", () => {
 // Function called when Set Grid Size is clicked. This will clear the container and rebuild based on user input
 function resetGrid() {
   let gridSize = prompt("What grid size would you like? 5-75, please.");
-  createGrid(gridSize);
+  if (gridSize < 5 || gridSize > 75) {
+    resetGrid();
+  } else {
+    createGrid(gridSize);
+  }
+  // createGrid(gridSize);
 }
 
 // Function to remove all child nodes, resetting the grid to default size
